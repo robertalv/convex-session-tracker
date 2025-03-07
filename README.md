@@ -1,5 +1,7 @@
 # Convex Session Tracker
 
+[![npm version](https://badge.fury.io/js/%40devwithbobby%2Fconvex-session-tracker.svg)](https://badge.fury.io/js/%40devwithbobby%2Fconvex-session-tracker)
+
 A simple and efficient way to track anonymous user sessions in your Convex applications.
 
 ## Features
