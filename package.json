@@ -1,0 +1,74 @@
+{
+  "name": "@devwithbobby/convex-session-tracker",
+  "version": "1.0.0",
+  "description": "Session tracking for Convex applications",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:types": "tsc --project tsconfig.json --declaration --emitDeclarationOnly --outDir dist/types",
+    "build:cjs": "tsc --project ./commonjs.json && echo '{\\n  \"type\": \"commonjs\"\\n}' > dist/commonjs/package.json",
+    "build:esm": "tsc --project ./esm.json && echo '{\\n  \"type\": \"module\"\\n}' > dist/esm/package.json",
+    "clean": "rm -rf dist",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "test": "echo \"No tests yet\"",
+    "typecheck": "tsc --noEmit",
+    "prepare": "npm run build"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "@convex-dev/component-source": "./src/client/index.ts",
+        "types": "./dist/esm/client/index.d.ts",
+        "default": "./dist/esm/client/index.js"
+      },
+      "require": {
+        "@convex-dev/component-source": "./src/client/index.ts",
+        "types": "./dist/commonjs/client/index.d.ts",
+        "default": "./dist/commonjs/client/index.js"
+      }
+    },
+    "./convex.config": {
+      "import": {
+        "@convex-dev/component-source": "./src/component/convex.config.ts",
+        "types": "./dist/esm/component/convex.config.d.ts",
+        "default": "./dist/esm/component/convex.config.js"
+      }
+    }
+  },
+  "keywords": [
+    "convex",
+    "session",
+    "tracking",
+    "analytics"
+  ],
+  "author": "Robert Alvarez",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "@types/react": "^19.0.10",
+    "convex": "^1.19.5",
+    "react": "^19.0.0"
+  },
+  "dependencies": {
+    "@devwithbobby/convex-session-tracker": "^1.0.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
