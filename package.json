@@ -2,6 +2,12 @@
   "name": "@devwithbobby/convex-session-tracker",
   "version": "1.0.0",
   "description": "Session tracking for Convex applications",
+  "repository": "github:robertalv/convex-session-tracker",
+  "homepage": "https://devwithbobby.com/projects/convex-session-tracker",
+  "bugs": {
+    "email": "support@convex.dev",
+    "url": "https://github.com/robertalv/convex-session-tracker/issues"
+  },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
@@ -25,21 +31,22 @@
     "./package.json": "./package.json",
     ".": {
       "import": {
-        "@convex-dev/component-source": "./src/client/index.ts",
-        "types": "./dist/esm/client/index.d.ts",
-        "default": "./dist/esm/client/index.js"
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/esm/index.js"
       },
       "require": {
-        "@convex-dev/component-source": "./src/client/index.ts",
-        "types": "./dist/commonjs/client/index.d.ts",
-        "default": "./dist/commonjs/client/index.js"
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
       }
     },
     "./convex.config": {
       "import": {
-        "@convex-dev/component-source": "./src/component/convex.config.ts",
-        "types": "./dist/esm/component/convex.config.d.ts",
+        "types": "./dist/types/component/convex.config.d.ts",
         "default": "./dist/esm/component/convex.config.js"
+      },
+      "require": {
+        "types": "./dist/types/component/convex.config.d.ts",
+        "default": "./dist/cjs/component/convex.config.js"
       }
     }
   },
@@ -57,7 +64,6 @@
     "react": "^19.0.0"
   },
   "dependencies": {
-    "@devwithbobby/convex-session-tracker": "^1.0.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
