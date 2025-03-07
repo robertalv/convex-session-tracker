@@ -1,8 +1,11 @@
 {
   "name": "@devwithbobby/convex-session-tracker",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Session tracking for Convex applications",
-  "repository": "github:robertalv/convex-session-tracker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertalv/convex-session-tracker.git"
+  },
   "homepage": "https://devwithbobby.com/projects/convex-session-tracker",
   "bugs": {
     "email": "support@convex.dev",
